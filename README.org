@@ -1,62 +1,44 @@
-
-* Introduction
-
-  This software is an implementation of the Precision Time Protocol
-  (PTP) according to IEEE standard 1588 for Linux. The dual design
-  goals are to provide a robust implementation of the standard and to
-  use the most relevant and modern Application Programming Interfaces
-  (API) offered by the Linux kernel. Supporting legacy APIs and other
-  platforms is not a goal.
-
-* License
-
-  The software is copyrighted by the authors and is licensed under the
-  GNU General Public License. See the file, COPYING, for details of
-  the license terms.
-
-* Features
-
-  - Supports hardware and software time stamping via the Linux
-    SO_TIMESTAMPING socket option.
-
-  - Supports the Linux PTP Hardware Clock (PHC) subsystem by using the
-    clock_gettime family of calls, including the clock_adjtimex system
-    call.
-
-  - Implements Boundary Clock (BC), Ordinary Clock (OC) and
-    Transparent Clock (TC).
-
-  - Transport over UDP/IPv4, UDP/IPv6, and raw Ethernet (Layer 2).
-
-  - Supports IEEE 802.1AS-2011 in the role of end station.
-
-  - Modular design allowing painless addition of new transports and
-    clock servos.
-
-  - Implements unicast operation.
-
-  - Supports a number of profiles, including:
-
-    - The automotive profile
-
-    - The default 1588 profile.
-
-    - The enterprise profile.
-
-    - The telecom profiles G.8265.1, G.8275.1, and G.8275.2.
-
-  - Supports the NetSync Monitor protocol.
-
-  - Implements Peer to peer one-step.
-
-  - Supports bonded, IPoIB, and vlan interfaces.
-
-  - Supports Authentication TLV using Nettle, GnuTLS, or OpenSSL
-
-    - NOTE: OpenSSLv3+ is distributed under Apache 2 license. When
-            compiled with this library, LinuxPTP is distributed
-            under GPL3. An additional flag is required for linking:
-            ~make EXTRA_CFLAGS=-DUSE_OPENSSL~
+简介
+ 
+本软件是基于IEEE 1588标准的精确时间协议（PTP）在Linux上的实现。其双重设计目标是：提供健壮的标准实现，并使用Linux内核提供的最相关、最现代的应用程序编程接口（API）。不支持旧版API和其他平台。
+ 
+许可证
+ 
+该软件由作者版权所有，根据GNU通用公共许可证授权。有关许可条款的详细信息，请参阅文件 COPYING 。
+ 
+功能特性
+ 
+- 时间戳支持：通过Linux的 SO_TIMESTAMPING 套接字选项支持硬件和软件时间戳。
+ 
+- PHC子系统支持：使用 clock_gettime 系列调用（包括 clock_adjtimex 系统调用）支持Linux PTP硬件时钟（PHC）子系统。
+ 
+- 时钟类型：实现边界时钟（BC）、普通时钟（OC）和透明时钟（TC）。
+ 
+- 传输协议：支持UDP/IPv4、UDP/IPv6和原始以太网（第2层）传输。
+ 
+- 802.1AS支持：作为终端设备支持IEEE 802.1AS-2011标准。
+ 
+- 模块化设计：便于添加新的传输层和时钟伺服模块。
+ 
+- 单播模式：支持单播操作。
+ 
+- 配置文件：支持多种配置文件，包括：
+ 
+- 汽车配置文件
+ 
+- 默认1588配置文件
+ 
+- 企业配置文件
+ 
+- 电信配置文件G.8265.1、G.8275.1和G.8275.2
+ 
+- 监控协议：支持NetSync监控协议。
+ 
+- 点对点一步模式：实现点对点一步时钟同步。
+ 
+- 接口支持：支持绑定接口、IPoIB和VLAN接口。
+ 
+- 认证TLV：使用Nettle、GnuTLS或OpenSSL支持认证TLV（注：OpenSSL v3+基于Apache 2许可证，编译时需添加 make EXTRA_CFLAGS=-DUSE_OPENSSL ）。
 
 * Getting the Code
 
